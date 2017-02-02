@@ -28,7 +28,7 @@
 <?php
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
-$html_content = scraperwiki::scrape("https://www.secp.gov.pk/company-name-search/?searchCriteria=Start&companyName=a");
+$html_content = scraperwiki::scrape("http://www.pmdc.org.pk//DesktopModules/pmdcDetails/PractDetail.aspx?RegistrationNo=9010-N");
 
 print_r($html_content);
   ?>
