@@ -29,6 +29,7 @@
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
 $html_content = scraperwiki::scrape("http://www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&query=any/");
+$html = str_get_html($html_content);
 
-print_r($html_content);
+print_r($html);
   ?>
