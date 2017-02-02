@@ -25,3 +25,10 @@
 // called "data.sqlite" in the current working directory which has at least a table
 // called "data".
 ?>
+<?php
+require 'scraperwiki.php';
+require 'scraperwiki/simple_html_dom.php';
+$html_content = scraperwiki::scrape("http://www.whatstove.co.uk/advanced-stove-search/search-results/?criteria=2&jr_okforsmokelesszone=1&order=alpha&query=any/");
+
+print_r($html_content);
+  ?>
