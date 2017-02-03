@@ -32,6 +32,13 @@ $html_content = scraperwiki::scrape("http://www.pmdc.org.pk//DesktopModules/pmdc
 
 $dom = new simple_html_dom();
 $dom->load($html);
-print_r($dom->find("table.list"));
+
+ foreach($html->find(".cssSTbl tbody tr") as $element) {
+  $TD_Title = $element->find("td", 0)->plaintext;
+  $TD_Value = $element->find("td", 1)->plaintext;
+  print $TD_Title . ' --> ' . $TD_Value;
+  echo '<br/>';
+ }
   
 ?>
+
