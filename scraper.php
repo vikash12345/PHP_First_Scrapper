@@ -28,10 +28,9 @@
 <?php
 require 'scraperwiki.php';
 require 'scraperwiki/simple_html_dom.php';
-$html_content = scraperwiki::scrape("http://www.pmdc.org.pk//DesktopModules/pmdcDetails/PractDetail.aspx?RegistrationNo=9010-N");
-
-$dom = new simple_html_dom();
-$dom->load($html);
+ $MyWebsite = 'http://www.pmdc.org.pk//DesktopModules/pmdcDetails/PractDetail.aspx?RegistrationNo=9010-N';
+ $html  = file_get_html($MyWebsite);
+ //print $html;
 
  foreach($html->find(".cssSTbl tbody tr") as $element) {
   $TD_Title = $element->find("td", 0)->plaintext;
@@ -39,6 +38,3 @@ $dom->load($html);
   print $TD_Title . ' --> ' . $TD_Value;
   echo '<br/>';
  }
-  
-?>
-
